@@ -17,6 +17,24 @@
       "comment": "Poklonu se ne gleda u oci.",
       "date": "2022-05-02T22:00:00.000Z",
       "id": 2
+    },
+    {
+      "itemName": "Laptop",
+      "category": "electronics",
+      "condition": "New",
+      "price": 1000,
+      "comment": "Dost' dobar laptop.",
+      "date": "2022-05-02T22:00:00.000Z",
+      "id": 3
+    },
+    {
+      "itemName": "Sara",
+      "category": "food",
+      "condition": "Garbage",
+      "price": 0,
+      "comment": "Cuca je gupa",
+      "date": "2022-05-02T22:00:00.000Z",
+      "id": 4
     }
   ]
 }
