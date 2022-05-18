@@ -30,6 +30,10 @@ export class AppComponent implements OnInit {
   openDialog() {
     this.dialog.open(DialogComponent, {
     width:'30%'
+    }).afterClosed().subscribe(val=>{
+      if(val === 'save'){
+        this.getAllItems();
+      }
     });
   }
 
@@ -54,6 +58,31 @@ export class AppComponent implements OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  editItem(row : any){
+    this.dialog.open(DialogComponent, {
+      width:'30%',
+      data:row
+    }).afterClosed().subscribe(val=>{
+      if(val === 'update'){
+        this.getAllItems();
+      }
+    });
+   
+  }
+
+  deleteItem(id:number){
+    this.api.deleteItem(id)
+    .subscribe({
+      next:(res)=>{
+        alert("Item has been deleted.")
+        this.getAllItems();
+      },
+      error:()=>{
+        alert("Error while deleting the item.")
+      } 
+    })
   }
 }
  
